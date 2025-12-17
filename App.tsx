@@ -3,6 +3,7 @@ import { DndContext, DragEndEvent, useSensor, useSensors, PointerSensor } from '
 import { Task, QuadrantID, PALETTE } from './types';
 import { Quadrant } from './components/Quadrant';
 import { TaskInput } from './components/TaskInput';
+import Snowflakes from "./components/Snowflakes";
 import { GanttView } from './components/GanttView';
 
 const App: React.FC = () => {
@@ -128,6 +129,7 @@ const App: React.FC = () => {
   const completedCount = tasks.filter(t => t.isCompleted).length;
 
   return (
+    <><Snowflakes />
     <div className="min-h-screen font-sans selection:bg-yellow-200 text-gray-800 flex flex-col" style={{ backgroundColor: PALETTE.BEIGE }}>
       
       {/* Header */}
@@ -215,6 +217,7 @@ const App: React.FC = () => {
         )}
       </main>
     </div>
+    </>
   );
 };
 
